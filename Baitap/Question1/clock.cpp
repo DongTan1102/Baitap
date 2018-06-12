@@ -1,50 +1,95 @@
+#include <iostream>
+#include <ctime>
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
 #include <Windows.h>
 #include <math.h>
-inline bool IsPressed(int presskey)
+using namespace std;
+
+void run_time(int &, int &, int &);
+
+void run_time(int &hour, int &min, int &sec)
 {
-	return GetAsyncKeyState(presskey);
-}
-int main()
-{
-	system("color C");
-	int bienphu = 0;
-	char n;
-	printf("\nPress Enter to start  ::  Press SPACE to stop  ::  Press SPACE again to resum\n");
-	printf("\n00:00:00");
-	scanf_s("%c", &n);
-	if (n == '\n')
+	if (hour == 24)
 	{
-		system("cls");
-		printf("\nPress Enter to start  ::  Press SPACE to stop  ::  Press SPACE again to resum\n");
-		for (int gio = 0; gio <= 24; gio++)
+		hour = 0;
+		for (int gio = hour; gio <= 23; gio++)
 		{
-			for (int phut = 0; phut <= 59; phut++)
+			if (min == 60)
 			{
-				if (phut >= 1)
-					printf("\nPress Enter to start  ::  Press SPACE to stop  ::  Press SPACE again to resum\n");
-				for (int giay = 0; giay <= 59; giay++)
+				min = 0;
+				for (int phut = min; phut <= 59; phut++)
 				{
-					if (IsPressed(VK_SPACE))
-						bienphu++;
-					if (bienphu % 2 == 1)
-						system("pause");
-					if (giay == 0)
+					for (int giay = 1 + sec; giay <= 59; giay++)
 					{
-						printf("\n");
+						system("cls");
+						cout << "The current time on the system: ";
+						cout << gio << ":" << phut << ":" << giay << endl;
+						Sleep(1000);
 					}
-					printf("%02d:%02d:%02d", gio, phut, giay);
-					Sleep(1000);
-					system("cls");
-					printf("\nPress Enter to start  ::  Press SPACE to stop  ::  Press SPACE again to resum\n");
-					printf("\n");
 				}
-				system("cls");
+			}
+			else
+			{
+				for (int phut = min; phut <= 59; phut++)
+				{
+					for (int giay = 1 + sec; giay <= 59; giay++)
+					{
+						system("cls");
+						cout << "The current time on the system: ";
+						cout << gio << ":" << phut << ":" << giay << endl;
+						Sleep(1000);
+					}
+				}
 			}
 		}
 	}
-	_getch();
-	return 0;
+	else
+	{
+		for (int gio = hour; gio <= 23; gio++)
+		{
+			if (min == 60)
+			{
+				min = 0;
+				for (int phut = min; phut <= 59; phut++)
+				{
+					for (int giay = 1 + sec; giay <= 59; giay++)
+					{
+						system("cls");
+						cout << "The current time on the system: ";
+						cout << gio << ":" << phut << ":" << giay << endl;
+						Sleep(1000);
+					}
+				}
+			}
+			else
+			{
+				for (int phut = min; phut <= 59; phut++)
+				{
+					for (int giay = 1 + sec; giay <= 59; giay++)
+					{
+						system("cls");
+						cout << "The current time on the system: ";
+						cout << gio << ":" << phut << ":" << giay << endl;
+						Sleep(1000);
+					}
+				}
+			}
+		}
+	}
 }
+
+	int main()
+{
+	// tra ve date/time hien tai dua tren system hien tai
+	time_t baygio = time(0);
+
+	tm *ltm = localtime(&baygio);
+
+	run_time(ltm->tm_hour, ltm->tm_min, ltm->tm_sec);
+	// in ra thoi gian hien tai tren system hien tai
+
+	system("pause");
+}
+
