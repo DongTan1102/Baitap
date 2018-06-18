@@ -8,4 +8,4 @@
 
 using namespace std;
 
-int myVar = 10;
+extern int myVar;
