@@ -1,41 +1,41 @@
-
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
-#include <string.h>
-using namespace std;
-
-enum SEASON { SPRING = 0x1, SUMMER = 0x10, FALL = 0x100, WINTER };
-
-void CheckSeason(int season)
-{
-	switch (season)
-	{
-	case SPRING:
-		printf("SPRING is %d\n", SPRING);
-		break;
-	case SUMMER:
-		printf("SUMMER is %d\n", SUMMER);
-		break;
-	case FALL:
-		printf("FALL is %d\n", FALL);
-		break;
-	case WINTER:
-		printf("WINTER is %d\n", WINTER);
-		break;
-	default:
-		printf("UNKNOWN: %d", season);
-		break;
-	}
-}
-
-void main()
-{
-	SEASON season = WINTER;
-	CheckSeason(season);
-	CheckSeason(0x10);
-	CheckSeason(5);
-
-	system("pause");
-}
+//
+//#include <iostream>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <conio.h>
+//#include <string.h>
+//using namespace std;
+//
+//enum SEASON { SPRING = 0x1, SUMMER = 0x10, FALL = 0x100, WINTER };
+//
+//void CheckSeason(int season)
+//{
+//	switch (season)
+//	{
+//	case SPRING:
+//		printf("SPRING is %d\n", SPRING);
+//		break;
+//	case SUMMER:
+//		printf("SUMMER is %d\n", SUMMER);
+//		break;
+//	case FALL:
+//		printf("FALL is %d\n", FALL);
+//		break;
+//	case WINTER:
+//		printf("WINTER is %d\n", WINTER);
+//		break;
+//	default:
+//		printf("UNKNOWN: %d", season);
+//		break;
+//	}
+//}
+//
+//void main()
+//{
+//	SEASON season = WINTER;
+//	CheckSeason(season);
+//	CheckSeason(0x10);
+//	CheckSeason(5);
+//
+//	system("pause");
+//}
