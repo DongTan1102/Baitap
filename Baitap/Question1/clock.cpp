@@ -80,7 +80,7 @@ void run_time(int &hour, int &min, int &sec)
 	}
 }
 
-	int main()
+int main()
 {
 	// tra ve date/time hien tai dua tren system hien tai
 	time_t baygio = time(0);
