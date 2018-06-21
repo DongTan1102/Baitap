@@ -117,6 +117,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="q8.1.cpp" />
+    <ClCompile Include="q8.2_test.cpp" />
+    <ClCompile Include="q8.4.cpp" />
+    <ClCompile Include="q8.4_test.cpp" />
+    <ClCompile Include="q8.5.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
