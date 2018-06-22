@@ -115,6 +115,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="q9.1.cpp" />
+    <ClCompile Include="q9.2.cpp" />
+    <ClCompile Include="q9.3.cpp" />
+    <ClCompile Include="q9.4_cpp.cpp" />
+    <ClCompile Include="q9.4_c.c" />
+    <ClCompile Include="q9.5.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="q9.1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
