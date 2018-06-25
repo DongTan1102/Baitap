@@ -1,7 +1,5 @@
 #include "People.h"
 
-
-
 People::People()
 {
 }
@@ -13,14 +11,25 @@ People::~People()
 
 
 
-char People::getName()
+void People::printInfo()
 {
-	return *name;
+	cout << " _____________________________________________" << endl;
+	cout << "| Code ID |       Name        |    Birthday   |" << endl;
+	cout << "|_________|___________________|_______________|" << endl;
+	cout << "|" << setw(4) << code_ID << "     |" << setw(16) << name << "   |" << setw(1);
+	birthday.outputDate();	
+	cout << "  |" << endl;
+	cout << "|_________|___________________|_______________|" << endl;
 }
 
-Date People::getBirthday()
+string People::getName()
 {
-	return birthday();
+	return name;
+}
+
+CDate People::getBirthday()
+{
+	return birthday;
 }
 
 int People::getCode_ID()
@@ -28,21 +37,25 @@ int People::getCode_ID()
 	return code_ID;
 }
 
-void People::setPeople(char *name, Date birthday, int code_ID)
+void People::setPeople(string name, CDate birthday, int code_ID)
 {
 	this->name = name;
-	this->birthday = birthday;
+	this->birthday.setDay(birthday.getDay());
+	this->birthday.setMonth(birthday.getMonth());
+	this->birthday.setYear(birthday.getYear());
 	this->code_ID = code_ID;
 }
 
-void People::setName(char *name)
+void People::setName(string name)
 {
 	this->name = name;
 }
 
-void People::setBirthday(Date birthday)
+void People::setBirthday(CDate birthday)
 {
-	this->birthday = birthday;
+	this->birthday.setDay(birthday.getDay());
+	this->birthday.setMonth(birthday.getMonth());
+	this->birthday.setYear(birthday.getYear());
 }
 
 void People::setCode_ID(int code_ID)
