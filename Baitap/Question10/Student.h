@@ -15,9 +15,10 @@ class Student :
 private: 
 	int grade;
 	int number_Project;
-	float *score_Project;
+	float score_Project[100] = { 4, 5, 9, 10 };
 	float avg_Score;
-	float avg_Score(float*);
+	
+	float avg(int);
 public:
 	Student();
 	~Student();
@@ -29,10 +30,10 @@ public:
 	float getScore_Project();
 	float getAvg_Score();
 
-	void setStudent(int, int, float*);
+	void setStudent(int, int); //con thieu diem
 	void setGrade(int);
 	void setNumber_Project(int);
-	void setScore_Project(float*)
+//	void setScore_Project(float*)
 
 };
 
