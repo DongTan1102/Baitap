@@ -10,16 +10,14 @@
 #include "Staff.h"
 
 using namespace std;
-
-using namespace std;
+enum subject { MATHS, PHYS, ENGLISH };
 
 class Teacher :
 	public People, Staff
 {
 private:
 	int grade;
-	//enum subject1 { MATHS, PHYS, ENGLISH };
-	//enum subject2 { MATHS, PHYS, ENGLISH };
+	subject subJect1, subJect2;
 public:
 	Teacher();
 	~Teacher();
@@ -27,10 +25,12 @@ public:
 	void printInfo();
 
 	int getGrade();
-	//int getSubject1();
-	//int getSubject2();
+	subject getSubject1();
+	subject getSubject2();
 
-	void setTeacher(int);
-	void setGrade();
+	void setTeacher(int, subject, subject);
+	void setGrade(int);
+	void setSubject1(subject);
+	void setSubject2(subject);
 };
 
