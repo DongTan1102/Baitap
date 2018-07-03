@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="q11.1.cpp" />
     <ClCompile Include="q11.2.cpp" />
+    <ClCompile Include="q11.4.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
